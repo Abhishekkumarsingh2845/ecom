@@ -1,7 +1,6 @@
 import React from 'react';
-import { Tab, Text, TabView, Image } from '@rneui/themed';
-import { View, StyleSheet, ScrollView } from 'react-native';
-import imag1 from "./src/Screen/Images/image 3.png";
+import { Tab, Text, TabView } from '@rneui/themed';
+import { View, StyleSheet, ScrollView,Image } from 'react-native';
 
 export default () => {
   const [index, setIndex] = React.useState(0);
@@ -28,7 +27,6 @@ export default () => {
             <Text style={styles.promotionSubtitle}>Up to 50% off</Text>
           </View>
           <View style={styles.box}>
-            <Image src={imag1}/>
           </View>
           <View style={styles.box} />
           <View style={styles.box} />
