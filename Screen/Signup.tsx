@@ -1,14 +1,15 @@
+
 import react from 'react';
 import {Text,View,StyleSheet,TextInput,Button} from 'react-native';
 
-function signup (){
+const Signup = ({ navigation }) => {
   return (
       <View style={styles.container}>
         <Text style={styles.text}>Sign UP</Text>
         <TextInput style={styles.containerInput} placeholder='Name'/>
         <TextInput style={styles.containerInput} placeholder='Email'/>
         <TextInput style={styles.containerInput} placeholder='password'/>
-        <Button title='SIGN UP' color="red" />
+        <Button title='SIGN UP'  onPress={() => navigation.navigate('Login')} color="red" />
       </View>
   );
 }
@@ -38,4 +39,4 @@ const styles=StyleSheet.create({
   }
 });
 
-  export default signup;
+export default Signup; 

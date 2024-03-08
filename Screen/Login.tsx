@@ -6,14 +6,14 @@ interface Props {
   navigation: NavigationProp<any>;
 }
 
-const Login: React.FC<Props> = ({ navigation }) => {
+const Login = ({ navigation }) => {
   return (
       <View style={styles.container}>
         <Text style={styles.text}>Sign UP</Text>
         <TextInput style={styles.containerInput} placeholder='Name'/>
         <TextInput style={styles.containerInput} placeholder='Email'/>
         <TextInput style={styles.containerInput} placeholder='password'/>
-        <Button title='SIGN UP'  onPress={() => navigation.navigate('Profile')} color="red" />
+        <Button title='SIGN UP'  onPress={() => navigation.navigate('Forgot')} color="red" />
       </View>
   );
 }

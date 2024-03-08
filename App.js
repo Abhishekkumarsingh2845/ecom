@@ -1,34 +1,21 @@
-import React, { useEffect } from 'react';
-import { Text, Alert, View } from 'react-native';
-import messaging from '@react-native-firebase/messaging';
+// App.js
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import Signup from './Screen/Signup';
+import Login from './Screen/Login';
+import Forgot from './Screen/ForgotPassword';
+const Stack = createStackNavigator();
 
 const App = () => {
-  useEffect(() => {
-    const getDeviceToken = async () => {
-      try {
-        const token = await messaging().getToken();
-        console.log(token);
-      } catch (error) {
-        console.error('Error getting device token:', error);
-      }
-    };
-    getDeviceToken();
-  }, []);
-
-  useEffect(() => {
-    const unsubscribe = messaging().onMessage(async (remoteMessage) => {
-      Alert.alert(
-        'Notification Received',
-        JSON.stringify(remoteMessage),
-      );
-    });
-    return unsubscribe;
-  }, []);
-
   return (
-    <View>
-      <Text>APP</Text>
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen name="Signup" component={Signup} />
+        <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="Forgot" component={Forgot}/>
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
 

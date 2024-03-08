@@ -1,7 +1,7 @@
 import react from 'react';
 import {Text,View,StyleSheet,TextInput,Button} from 'react-native';
 
-function signup (){
+const Forgot = ({navigation}) => {
   return (
       <View style={styles.container}>
         <Text style={styles.text}>Forgot Password</Text>
@@ -43,4 +43,4 @@ const styles=StyleSheet.create({
   }
 });
 
-  export default signup;
+  export default Forgot;
