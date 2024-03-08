@@ -1,58 +1,76 @@
-import react from 'react';
-import {Text,View,StyleSheet,TextInput,Image,TouchableOpacity} from 'react-native';
+import React from 'react';
+import { Text, View, StyleSheet, TextInput, TouchableOpacity, ScrollView } from 'react-native';
 
-function signup (){
+const ViewP = ({navigation}) => {
   return (
-      <View style={styles.container}>
-        <TouchableOpacity  style={{ backgroundColor: 'red', padding: 20, borderRadius: 55,left:4,top:-10,width:390,height:70 }}>
-        <Text style={{ color: 'white', fontWeight: 'bold' ,left:92,fontSize:22,}}>View All Product</Text>
-        </TouchableOpacity>
-        <TouchableOpacity>
-        <Text style={styles.containerInput}>Tops</Text>
-        </TouchableOpacity>
-        <TouchableOpacity>
-        <Text style={styles.containerInput} >Jeans</Text>
-        </TouchableOpacity>
-        <TouchableOpacity>
-        <Text style={styles.containerInput} >Shirt</Text>
-        </TouchableOpacity>
-        <TouchableOpacity>
-        <Text style={styles.containerInput} >Trouser</Text>
-        </TouchableOpacity>
-        <TouchableOpacity>
-        <Text style={styles.containerInput} >Knitwear</Text>
-        </TouchableOpacity>
-        <TouchableOpacity>
-        <Text style={styles.containerInput} >Blazer</Text>
-        </TouchableOpacity>
-        <TouchableOpacity>
-        <Text style={styles.containerInput}>outwear</Text>
-        </TouchableOpacity>
-        <TouchableOpacity>
-        <Text style={styles.containerInput} >skrit</Text>
-        </TouchableOpacity>
-        <TouchableOpacity>
-        <Text style={styles.containerInput} >Dresses</Text>
-        </TouchableOpacity>
-        </View>
+    <ScrollView contentContainerStyle={styles.container}>
+      <TouchableOpacity style={styles.button} onPress={()=>navigation.navigate('Success')} >
+        <Text style={styles.buttonText} >View All Product</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.item}>
+        <Text style={styles.itemText}>Tops</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.item}>
+        <Text style={styles.itemText}>Jeans</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.item}>
+        <Text style={styles.itemText}>Shirt</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.item}>
+        <Text style={styles.itemText}>Trouser</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.item}>
+        <Text style={styles.itemText}>Knitwear</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.item}>
+        <Text style={styles.itemText}>Blazer</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.item}>
+        <Text style={styles.itemText}>Outwear</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.item}>
+        <Text style={styles.itemText}>Skirt</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.item}>
+        <Text style={styles.itemText}>Dresses</Text>
+      </TouchableOpacity>
+    </ScrollView>
   );
 }
-const styles=StyleSheet.create({
+
+const styles = StyleSheet.create({
   container: {
-    flex:1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    flexGrow: 1,
     backgroundColor: '#F5FCFF',
+    alignItems: 'center',
+    paddingVertical: 20,
   },
-  containerInput: {
-    width:390,
-    height:70,
-    backgroundColor:'white',
+  button: {
+    backgroundColor: 'red',
+    paddingVertical: 20,
+    borderRadius: 10,
+    marginBottom: 20,
+    width: '90%',
+    alignItems: 'center',
+  },
+  buttonText: {
+    color: 'white',
     fontWeight: 'bold',
-    fontSize:20,
-    bottom:-40,
-  
-  }
+    fontSize: 20,
+  },
+  item: {
+    backgroundColor: 'white',
+    paddingVertical: 20,
+    paddingHorizontal: 10,
+    marginBottom: 10,
+    width: '90%',
+    borderRadius: 10,
+    alignItems: 'center',
+  },
+  itemText: {
+    fontWeight: 'bold',
+    fontSize: 20,
+  },
 });
 
-  export default signup;
+export default ViewP;

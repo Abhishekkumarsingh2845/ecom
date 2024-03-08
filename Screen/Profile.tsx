@@ -1,54 +1,60 @@
-import react from 'react';
-import {Text,View,StyleSheet,TextInput,Button} from 'react-native';
-import { NavigationProp } from '@react-navigation/native';
+import React from 'react';
+import { Text, View, StyleSheet, Dimensions } from 'react-native';
 
-interface Props {
-  navigation: NavigationProp<any>;
-}
-
-const Profile: React.FC<Props> = ({ navigation }) => {
+const Profile = ({ navigation }) => {
   return (
-      <View style={styles.container}>
-        <Text style={styles.text}>Profile</Text>
-        <Text style={styles.cc}>HARSH.{'\n'}singhrnq231217@gmail.com</Text>
-        <Text style={styles.containerInput}>My oder</Text>
-        <Text style={styles.containerInput} >Shipping Address</Text>
-        <Text style={styles.containerInput} >Payment Method</Text>
-        <Text style={styles.containerInput} >PromoCode</Text>
-        <Text style={styles.containerInput} >My Review</Text>
-        <Text style={styles.containerInput} >Setting</Text>
-      </View>
+    <View style={styles.container}>
+      <Text style={styles.text}>Profile</Text>
+      <Text style={styles.userInfo}>HARSH.{'\n'}singhrnq231217@gmail.com</Text>
+      <MenuButton title="My Order" />
+      <MenuButton title="Shipping Address" />
+      <MenuButton title="Payment Method" />
+      <MenuButton title="Promo Code" />
+      <MenuButton title="My Review" />
+      <MenuButton title="Setting" />
+    </View>
   );
-}
+};
 
-const styles=StyleSheet.create({
+const { width } = Dimensions.get('window'); // Get the width of the screen
+
+const styles = StyleSheet.create({
   container: {
-    flex:1,
+    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
-  cc: {
-      left:121,
-      bottom:42,
-  },
-  text : {
-    fontSize:40,
-    color:"black",
+  text: {
+    fontSize: 40,
+    color: 'black',
     fontWeight: 'bold',
-    bottom:60,
-    right:140,
+    marginBottom: 20,
   },
-  containerInput: {
-    width:390,
-    height:70,
-    backgroundColor:'white',
-    marginTop:33,
+  userInfo: {
+    fontSize: 20,
     fontWeight: 'bold',
-    bottom:20,
-    fontSize:20,
-  
-  }
+    marginBottom: 20,
+  },
+  menuButton: {
+    width: width - 40, // Adjusted width to fit screen size
+    height: 70,
+    backgroundColor: 'white',
+    marginTop: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 10,
+  },
+  menuButtonText: {
+    fontSize: 20,
+    fontWeight: 'bold',
+  },
 });
 
-  export default Profile;
+const MenuButton = ({ title }) => (
+  <View style={styles.menuButton}>
+    <Text style={styles.menuButtonText}>{title}</Text>
+  </View>
+);
+
+export default Profile;

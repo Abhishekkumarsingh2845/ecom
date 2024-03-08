@@ -1,42 +1,39 @@
+import React from 'react';
+import { Text, View, StyleSheet, TextInput, Button, Dimensions } from 'react-native';
 
-import react from 'react';
-import {Text,View,StyleSheet,TextInput,Button} from 'react-native';
-
-const Signup = ({ navigation }) => {
+const Signup = ({navigation}) => {
   return (
-      <View style={styles.container}>
-        <Text style={styles.text}>Sign UP</Text>
-        <TextInput style={styles.containerInput} placeholder='Name'/>
-        <TextInput style={styles.containerInput} placeholder='Email'/>
-        <TextInput style={styles.containerInput} placeholder='password'/>
-        <Button title='SIGN UP'  onPress={() => navigation.navigate('Login')} color="red" />
-      </View>
+    <View style={styles.container}>
+      <Text style={styles.text}>Sign UP</Text>
+      <TextInput style={styles.containerInput} placeholder='Name' />
+      <TextInput style={styles.containerInput} placeholder='Email' />
+      <TextInput style={styles.containerInput} placeholder='Password' />
+      <Button title='SIGN UP' onPress={() => navigation.navigate('Login')} color="red" />
+    </View>
   );
 }
 
-const styles=StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
-    flex:1,
+    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
-  text : {
-    fontSize:40,
-    color:"black",
+  text: {
+    fontSize: Dimensions.get('window').width * 0.1, // Responsive font size
+    color: "black",
     fontWeight: 'bold',
-    bottom:180,
-    right:140,
+    marginBottom: 20,
   },
   containerInput: {
-    width:390,
-    height:50,
-    marginTop:15, 
-    backgroundColor:'white',
-
-    bottom:20,
-  
+    width: Dimensions.get('window').width * 0.8, // Responsive width
+    height: 50,
+    marginTop: 15,
+    backgroundColor: 'white',
+    paddingHorizontal: 10,
+    marginBottom: 10,
   }
 });
 
-export default Signup; 
+export default Signup;

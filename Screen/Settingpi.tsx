@@ -1,7 +1,8 @@
 import React,{useState} from 'react';
 import { Text, View, StyleSheet, TextInput, KeyboardAvoidingView,Switch } from 'react-native';
 
-function signup() {
+
+const Setting=()=> {
 
   const [isEnabled, setIsEnabled] = useState(false);
 
@@ -92,4 +93,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default signup;
+export default Setting;

@@ -1,59 +1,51 @@
-import react from 'react';
-import {Text,View,StyleSheet,TextInput,ImageBackground,TouchableOpacity} from 'react-native';
+import React from 'react';
+import { Text, View, StyleSheet, TextInput, ImageBackground, TouchableOpacity, Dimensions } from 'react-native';
 
-function signup (){
+const Visual = ({ navigation }) => {
   return (
-      
-        <ImageBackground source={require("./assets/aa.png")} style={styles.aa}>
-          <Text style={styles.tex}>Search for an outfit by{"\n"} taking a photo or uploading{"\n"} a Image</Text>
+    <View style={styles.container}>
+      <ImageBackground source={require("../assets/aa.png")} style={styles.backgroundImage}>
+        <Text style={styles.text}>Search for an outfit by{"\n"} taking a photo or uploading{"\n"} an image</Text>
         <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>Take a Photo</Text>
+          <Text style={styles.buttonText} onPress={()=>navigation.navigate('ViewProduct')}>Take a Photo</Text>
         </TouchableOpacity>
-        </ImageBackground>
+      </ImageBackground>
+    </View>
   );
 }
-const styles=StyleSheet.create({
+
+const { width, height } = Dimensions.get('window');
+
+const styles = StyleSheet.create({
   container: {
-    flex:1,
+    flex: 1,
+  },
+  backgroundImage: {
+    width: '100%',
+    height: '100%',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  tex:{
-  fontSize:24,
-  fontWeight:'bold',
-  color:"white",
-  top:442,
-  left:22,
-  marginTop:22,
-  
-  },
-  aa:{
-    width:'100%',
-    height:"100%",
-  },
-  
-  button: {
-    backgroundColor: 'red',
-     width:"95%",
-     height:"5%",
-    borderRadius: 20,
-    paddingVertical: 10,
-    paddingHorizontal: 160,
-    top:552,
-    left:20,
-   
-  },
-  buttonText: {
-    fontSize: 16,
-    color: '#333',
-    
   },
   text: {
-    fontSize: 20,
-    color: '#fff',
-    marginTop: 20,
+    fontSize: width * 0.05, // Responsive font size
+    fontWeight: 'bold',
+    color: 'white',
+    textAlign: 'center',
+    marginTop: height * 0.2, // Responsive margin top
+  },
+  button: {
+    backgroundColor: 'red',
+    width: width * 0.8, // Responsive width
+    borderRadius: 20,
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    marginTop: height * 0.05, // Responsive margin top
+  },
+  buttonText: {
+    fontSize: width * 0.04, // Responsive font size
+    color: '#333',
+    textAlign: 'center',
   },
 });
 
-  export default signup;
+export default Visual;

@@ -1,4 +1,4 @@
-import react, {useState} from 'react';
+import React, { useState } from 'react';
 import CheckBox from '@react-native-community/checkbox';
 import {
   Text,
@@ -6,100 +6,77 @@ import {
   StyleSheet,
   TextInput,
   Image,
-  TouchableOpacity,ScrollView
+  TouchableOpacity,
+  ScrollView,
+  Dimensions,Button // Import Dimensions for screen size detection
 } from 'react-native';
 
-function signup() {
+const Address = ({ navigation }) => {
   const [toggleCheckBox, setToggleCheckBox] = useState(false);
+
   return (
-    <View style={styles.container}>
-     
-      <View style={styles.aa}>
-        <Text style={styles.ft}>Harsh</Text>
+    <ScrollView contentContainerStyle={styles.container}>
+      <View style={styles.addressContainer}>
+        <Text style={styles.name}>Harsh</Text>
         <TouchableOpacity>
-        <Text style={styles.pp}>Edit</Text>
+          <Text style={styles.edit} >Edit</Text>
         </TouchableOpacity>
-        
-        <Text style={styles.ff}>D-107 .{'\n'}Vasundhara,Ghaziabad,U.P</Text>
-
-        <CheckBox
-          disabled={false}
-          value={toggleCheckBox}
-          onValueChange={newValue => setToggleCheckBox(newValue)}
-          style={styles.ch}
-        />
-        <Text style={styles.fttt}>Use This Address</Text>
+        <Text style={styles.address}>D-107{'\n'}Vasundhara, Ghaziabad, U.P</Text>
+        <View style={styles.checkBoxContainer}>
+          <CheckBox
+            disabled={false}
+            value={toggleCheckBox}
+            onValueChange={newValue => setToggleCheckBox(newValue)}
+            style={styles.checkBox}
+          />
+          <Text style={styles.useAddressText}>Use This Address</Text>
+          <Button title='LOGIN' onPress={() => navigation.navigate('Profile')} color="red" />
+        </View>
       </View>
-      <View style={styles.aa}>
-        <Text style={styles.ft}>Harsh</Text>
-        <TouchableOpacity>
-        <Text style={styles.pp}>Edit</Text>
-        </TouchableOpacity>
-        <Text style={styles.ff}>D-107 .{'\n'}Vasundhara,Ghaziabad,U.P</Text>
-
-        <CheckBox
-          disabled={false}
-          value={toggleCheckBox}
-          onValueChange={newValue => setToggleCheckBox(newValue)}
-          style={styles.ch}
-        />
-        <Text style={styles.fttt}>Use This Address</Text>
-      </View>
-      <View style={styles.aa}>
-        <Text style={styles.ft}>Harsh</Text>
-        <TouchableOpacity>
-        <Text style={styles.pp}>Edit</Text>
-        </TouchableOpacity>
-        <Text style={styles.ff}>D-107 .{'\n'}Vasundhara,Ghaziabad,U.P</Text>
-
-        <CheckBox
-          disabled={false}
-          value={toggleCheckBox}
-          onValueChange={newValue => setToggleCheckBox(newValue)}
-          style={styles.ch}
-        />
-        <Text style={styles.fttt}>Use This Address</Text>
-      </View>
-    </View>
+    </ScrollView>
   );
-}
+};
+
+const { width } = Dimensions.get('window'); // Get the width of the screen
+
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: 'center',
+    flexGrow: 1,
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
-  aa: {
-    width: 390,
+  addressContainer: {
+    width: width - 20, // Adjusted width to fit screen size
     height: 200,
     borderWidth: 0.2,
     backgroundColor: 'white',
-    bottom: 108,
-    marginTop: 22,
+    marginVertical: 10,
+    padding: 10,
   },
-  ft: {
+  name: {
     fontSize: 22,
-    left: 15,
+    marginBottom: 5,
   },
-  ff: {
-    fontSize: 18,
-    left: 15,
-    marginTop: 23,
-  },
-  ch: {
-    left: 12,
-    top: 26,
-  },
-  fttt: {
-    fontSize: 16,
-    left: 53,
-    top:-2,
-  },
-  pp:{
-    left:355,
+  edit: {
+    position: 'absolute',
+    right: 5,
+    top: 5,
     color: 'red'
-  }
+  },
+  address: {
+    fontSize: 18,
+    marginBottom: 20,
+  },
+  checkBoxContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  checkBox: {
+    marginRight: 10,
+  },
+  useAddressText: {
+    fontSize: 16,
+  },
 });
 
-export default signup;
+export default Address;

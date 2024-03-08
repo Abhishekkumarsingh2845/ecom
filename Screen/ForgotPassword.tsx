@@ -1,5 +1,5 @@
 import react from 'react';
-import {Text,View,StyleSheet,TextInput,Button} from 'react-native';
+import {Text,View,StyleSheet,TextInput,Button,Dimensions} from 'react-native';
 
 const Forgot = ({navigation}) => {
   return (
@@ -20,20 +20,20 @@ const styles=StyleSheet.create({
     backgroundColor: '#F5FCFF',
   },
   text : {
-    fontSize:40,
+    fontSize:Dimensions.get('window').width * 0.1,
     color:"black",
     fontWeight: 'bold',
     bottom:200,
     left:-42,
   },
   qq: {
-    fontSize:18,
+    fontSize:Dimensions.get('window').width *  0.1, 
     bottom:44,
     color:'black',
 
   },
   containerInput: {
-    width:390,
+    width:Dimensions.get('window').width * 0.8, 
     height:70,
     marginTop:15, 
     backgroundColor:'white',
