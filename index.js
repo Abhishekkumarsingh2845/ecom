@@ -13,8 +13,8 @@ import 'firebase/auth';
 
 const firebaseConfig = {
     apiKey: 'AIzaSyC4BgUA7WfBkZIQ6w6hWdf7nafLgjep-aA',
-    authDomain: 'fire-51c01-default-rtdb.firebaseio.com',
-    databaseURL: 'https://fire-51c01-default-rtdb.firebaseio.com',
+    authDomain: 'uapp-132ac-default-rtdb.firebaseio.com',
+    databaseURL: 'https://uapp-132ac-default-rtdb.firebaseio.com',
     projectId: 'uapp-132ac',
     storageBucket: 'uapp-132ac.appspot.com',
     messagingSenderId: '362707370482',
