@@ -1,94 +1,35 @@
+// App.js
 import React from 'react';
-import { Tab, Text } from '@rneui/themed';
-import { View, StyleSheet, ScrollView, Image } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import Signup from './Screen/Signup';
+import Login from './Screen/Login';
+import Forgot from './Screen/ForgotPassword';
+import Visual from './Screen/VisualSearch';
+import ViewP from './Screen/ViewPrdouct';
+import Success from './Screen/Success';
+import Address from './Screen/Address';
+import Profile from './Screen/Profile';
+import Setting from './Screen/Settingpi';
 
-export default () => {
-  const [index, setIndex] = React.useState(0);
+const Stack = createStackNavigator();
 
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Tab
-        value={index}
-        onChange={(e) => setIndex(e)}
-        indicatorStyle={{
-          backgroundColor: 'white',
-          height: 3,
-        }}
-        variant="primary"
-      >
-        <Tab.Item title="Women" titleStyle={{ fontSize: 12 }} />
-        <Tab.Item title="Man" titleStyle={{ fontSize: 12 }} />
-        <Tab.Item title="Kids" titleStyle={{ fontSize: 12 }} />
-      </Tab>
-      <ScrollView contentContainerStyle={styles.scrollView}>
-        <View style={styles.content}>
-          <View style={styles.promotion}>
-            <Text style={styles.promotionText}>SUMMER SALES</Text>
-            <Text style={styles.promotionSubtitle}>Up to 50% off</Text>
-          </View>
-          {[...Array(4)].map((_, index) => (
-            <View style={styles.box} key={index}>
-              <Text style={styles.aa}>NEW</Text>
-              <Image source={require("./assets/black.png")} style={styles.image} />
-            </View>
-          ))}
-        </View>
-      </ScrollView>
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen name="Signup" component={Signup} />
+        <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="Forgot" component={Forgot}/>
+        <Stack.Screen name="Visual" component={Visual}/>
+        <Stack.Screen name="ViewProduct" component={ViewP}/>
+        <Stack.Screen name="Success" component={Success}/>
+        <Stack.Screen name="Address" component={Address}/>
+        <Stack.Screen name="Profile" component={Profile}/>
+        <Stack.Screen name="Setting" component={Setting}/>
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'aliceblue',
-  },
-  scrollView: {
-    flexGrow: 1,
-    paddingVertical: 20,
-  },
-  content: {
-    paddingHorizontal: 20,
-  },
-  promotion: {
-    width: '100%',
-    height: 100,
-    borderRadius: 13,
-    backgroundColor: 'red',
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginBottom: 10,
-  },
-  promotionText: {
-    fontSize: 22,
-    color: 'white',
-    marginBottom: 5,
-    fontWeight: 'bold',
-  },
-  promotionSubtitle: {
-    fontSize: 16,
-    color: 'white',
-    fontWeight: 'bold',
-  },
-  box: {
-    width: '100%',
-    height: 150,
-    marginBottom: 20,
-    borderRadius: 13,
-    backgroundColor: 'azure',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  image: {
-    width: 150,
-    height: 150,
-    left:66,
-    borderBottomRightRadius: 13,
-  },
-aa:{
- fontSize:22,
- fontWeight:'bold',
- left:-99,
- top:52,
-}
-});
+export default App;
