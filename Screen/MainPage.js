@@ -1,15 +1,11 @@
-import React, { useState } from 'react';
-import CheckBox from '@react-native-community/checkbox';
-import {
-  Text,
-  View,
-  StyleSheet,
-  TextInput,
-  Image,
-  TouchableOpacity,
-  ScrollView,
-  Dimensions,
-} from 'react-native';
+import React from 'react';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { Image, StyleSheet, View, ScrollView } from 'react-native';
+import HomeScreen from './Screen/Login'; // Check the correct path for your HomeScreen
+import ProfileScreen from './Screen/Address'; // Check the correct path for your ProfileScreen
+import { NavigationContainer } from '@react-navigation/native';
+
+const Tab = createBottomTabNavigator();
 
 const Address = ({ navigation }) => {
   return (
@@ -36,16 +32,44 @@ const Address = ({ navigation }) => {
           resizeMode="cover" // Adjust the resizeMode as needed
         />
       </ScrollView>
+      <NavigationContainer>
+      {/* Tab Navigator */}
+      <Tab.Navigator
+     
+      >
+        <Tab.Screen
+          name="Home"
+          component={HomeScreen}
+          options={{
+            tabBarIcon: ({ color }) => (
+              <Image
+                source={require('./assets/aa.png')}
+                style={[styles.icon, { tintColor: color }]}
+              />
+            ),
+          }}
+        />
+        <Tab.Screen
+          name="Profile"
+          component={ProfileScreen}
+          options={{
+            tabBarIcon: ({ color }) => (
+              <Image
+                source={require('./assets/aa.png')}
+                style={[styles.icon, { tintColor: color }]}
+              />
+            ),
+          }}
+        />
+      </Tab.Navigator>
+      </NavigationContainer>
     </View>
   );
 };
 
-const { width } = Dimensions.get('window'); // Get the width of the screen
-
 const styles = StyleSheet.create({
   addressContainer: {
-    flexGrow: 1,
-    alignItems: 'center',
+    flex: 1,
     backgroundColor: '#F5FCFF',
   },
   aa: {
@@ -55,17 +79,26 @@ const styles = StyleSheet.create({
   },
   scrollView: {
     flex: 1,
-    bottom:44
+    bottom: 44,
   },
   scrollViewContent: {
     paddingRight: 60, // Add padding to the right side
   },
   image: {
-     
     width: 200, // Set the width of the image
     height: 200, // Set the height of the image
     marginLeft: 5,
   },
+  tabBar: {
+    backgroundColor: '#FFFFFF',
+    borderTopWidth: 1,
+    borderTopColor: '#DDDDDD',
+  },
+  icon: {
+    width: 24,
+    height: 24,
+  },
+  
 });
 
 export default Address;
