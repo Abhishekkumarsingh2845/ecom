@@ -1,11 +1,11 @@
 import React from 'react';
-import { Text, View, StyleSheet, TextInput, TouchableOpacity, ScrollView } from 'react-native';
+import { Text, View, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
 
-const ViewP = ({navigation}) => {
+const ViewP = ({ navigation }) => {
   return (
     <ScrollView contentContainerStyle={styles.container}>
-      <TouchableOpacity style={styles.button} onPress={()=>navigation.navigate('Success')} >
-        <Text style={styles.buttonText} >View All Product</Text>
+      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Success')}>
+        <Text style={styles.buttonText}>View All Items</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.item}>
         <Text style={styles.itemText}>Tops</Text>
@@ -66,10 +66,13 @@ const styles = StyleSheet.create({
     width: '90%',
     borderRadius: 10,
     alignItems: 'center',
+    borderWidth: 1,
+    borderColor: 'black', // Add border color
   },
   itemText: {
     fontWeight: 'bold',
     fontSize: 20,
+    color:"black",
   },
 });
 

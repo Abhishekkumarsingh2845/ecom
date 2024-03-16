@@ -83,3 +83,58 @@ const styles = StyleSheet.create({
 });
 
 export default Address;
+
+
+
+
+
+
+
+
+
+
+
+
+</ScrollView>
+          </View>
+          {[...Array(4)].map((_, index) => (
+            <View style={styles.box} key={index}>
+              <Text style={styles.aa}>NEW</Text>
+              <Image source={require("./assets/black.png")} style={styles.image} />
+            </View>
+          ))}
+        </View>
+      </ScrollView>
+
+
+
+
+
+
+      box: {
+        width: '100%',
+        height: 150,
+        marginBottom: 20,
+        borderRadius: 13,
+        backgroundColor: 'azure',
+        justifyContent: 'center',
+        alignItems: 'center',
+      },
+      image: {
+        width: 150,
+        height: 150,
+        left: 66,
+        borderBottomRightRadius: 13,
+      },
+      aa: {
+        fontSize: 22,
+        fontWeight: 'bold',
+        position: 'absolute',
+        left: 0,
+        top: 0,
+        zIndex: 1,
+        paddingHorizontal: 8,
+        paddingVertical: 4,
+        backgroundColor: 'black',
+        color: 'white',
+      },
