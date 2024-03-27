@@ -1,5 +1,7 @@
 import React from 'react';
 import { Text, View, StyleSheet, TextInput, Button, Dimensions } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import MainTabNavigator from '../Screen/Bottom'; // Assuming this is your main navigator
 
 const Signup = ({navigation}) => {
   return (
@@ -9,6 +11,9 @@ const Signup = ({navigation}) => {
       <TextInput style={styles.containerInput} placeholder='Email' />
       <TextInput style={styles.containerInput} placeholder='Password' />
       <Button title='SIGN UP' onPress={() => navigation.navigate('Login')} color="red" />
+      <NavigationContainer>
+      <MainTabNavigator />
+    </NavigationContainer>
     </View>
   );
 }

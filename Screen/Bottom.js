@@ -6,7 +6,7 @@ import Login from '../Screen/Login';
 import Profile from '../Screen/Profile';
 import Fav  from '../Screen/Favourite';
 import  MyBagScreen from '../Screen/MyBagScreen';
-
+import MainPage from '../Screen/MainPage';
 
 const Tab = createBottomTabNavigator();
 
@@ -24,11 +24,15 @@ const MainTabNavigator = () => {
         },
       }}
     >
-      <Tab.Screen name="Home" component={Address} />
-      <Tab.Screen name="Login" component={Login} />
-      <Tab.Screen name="Profile" component={Profile} />
-      <Tab.Screen name="Favorite" component={Fav} />
+      <Tab.Screen name="Home" component={MainPage} />
+      <Tab.Screen name="Ho" component={Address} />
+    
       <Tab.Screen name="Bag" component={MyBagScreen} />
+      <Tab.Screen name="Favorite" component={Fav} />
+      <Tab.Screen name="Profile" component={Profile} />
+
+      
+
     </Tab.Navigator>
   );
 };

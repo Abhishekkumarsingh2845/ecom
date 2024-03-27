@@ -10,8 +10,6 @@ import Success from './Screen/Success';
 import Address from './Screen/Address';
 import Profile from './Screen/Profile';
 import Setting from './Screen/Settingpi';
-import  MyBagScreen from './Screen/MyBagScreen';
-import  MainPage from './Screen/MainPage';
 
 const Stack = createStackNavigator();
 
@@ -28,12 +26,9 @@ const App = () => {
         <Stack.Screen name="Address" component={Address}/>
         <Stack.Screen name="Profile" component={Profile}/>
         <Stack.Screen name="Setting" component={Setting}/>
-        <Stack.Screen name="MyBagScreen" component={MyBagScreen}/>
-        <Stack.Screen name="Main" component={MainPage}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
 };
 
 export default App;
-
