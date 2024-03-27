@@ -15,6 +15,7 @@ const Login = ({ navigation }: Props) => {
       <TextInput style={styles.containerInput} placeholder='Password' />
       <Text style={styles.textp} onPress={()=>navigation.navigate('Forgot')}>Forgot Password</Text>
       <Button title='LOGIN' onPress={() => navigation.navigate('Visual')} color="red" />
+      <Button title='LOGIN' onPress={() => navigation.navigate('Main')} color="red" />
     </View>
   );
 }
@@ -49,6 +50,3 @@ const styles = StyleSheet.create({
 });
 
 export default Login;
-
-
-

@@ -1,22 +1,22 @@
 import React from 'react';
-import { Text, View, StyleSheet, Dimensions } from 'react-native';
+import { Text, View, StyleSheet, Dimensions, TouchableOpacity } from 'react-native';
 
-const Profile = ({ navigation }) => {
+const Profile = ({navigation}) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Profile</Text>
+      <Text style={styles.title} onPress={()=>navigation.navigate('Favorite')}>Profile</Text>
       <Text style={styles.userInfo}>HARSH.{'\n'}singhrnq231217@gmail.com</Text>
       <MenuButton title="My Order" />
       <MenuButton title="Shipping Address" />
       <MenuButton title="Payment Method" />
       <MenuButton title="Promo Code" />
       <MenuButton title="My Review" />
-      <MenuButton title="Setting" />
+      <MenuButton title="Settings" />
     </View>
   );
 };
 
-const { width } = Dimensions.get('window'); // Get the width of the screen
+const { width } = Dimensions.get('window');
 
 const styles = StyleSheet.create({
   container: {
@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
-  text: {
+  title: {
     fontSize: 40,
     color: 'black',
     fontWeight: 'bold',
@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   menuButton: {
-    width: width - 40, // Adjusted width to fit screen size
+    width: width - 40,
     height: 70,
     backgroundColor: 'white',
     marginTop: 10,
@@ -52,9 +52,9 @@ const styles = StyleSheet.create({
 });
 
 const MenuButton = ({ title }) => (
-  <View style={styles.menuButton}>
+  <TouchableOpacity style={styles.menuButton}>
     <Text style={styles.menuButtonText}>{title}</Text>
-  </View>
+  </TouchableOpacity>
 );
 
 export default Profile;

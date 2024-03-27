@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Tab, Text } from '@rneui/themed';
 import { View, StyleSheet, ScrollView, Image, TouchableOpacity } from 'react-native';
 
-export default () => {
+const Catalog = () => {
   const [isTShirtClicked, setIsTShirtClicked] = useState(false);
   const [isCklemkeClicked, setIsCklemkeClicked] = useState(false);
   const [isMcmClicked, setIsMcmClicked] = useState(false);
@@ -63,7 +63,7 @@ export default () => {
           {[...Array(4)].map((_, index) => (
             <View style={styles.box} key={index}>
               <Text style={styles.aa}>NEW</Text>
-              <Image source={require("./assets/black.png")} style={styles.image} />
+              <Image source={require("../assets/black.png")} style={styles.image} />
             </View>
           ))}
         </View>
@@ -160,3 +160,4 @@ const styles = StyleSheet.create({
     color: 'white',
   },
 });
+export default Catalog;

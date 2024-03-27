@@ -1,68 +1,36 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Image, StyleSheet, View, ScrollView } from 'react-native';
-import HomeScreen from './Screen/Login'; // Check the correct path for your HomeScreen
-import ProfileScreen from './Screen/Address'; // Check the correct path for your ProfileScreen
-import { NavigationContainer } from '@react-navigation/native';
 
-const Tab = createBottomTabNavigator();
 
-const Address = ({ navigation }) => {
+
+
+const MainPage = ({ navigation }) => {
   return (
     <View style={styles.addressContainer}>
       <Image
-        source={require('./assets/bb.png')}
+        source={require('../assets/bb.png')}
         style={styles.aa}
         resizeMode="contain"
       />
       <ScrollView style={styles.scrollView} horizontal={true} contentContainerStyle={styles.scrollViewContent}>
         <Image
-          source={require('./assets/girl.png')}
+          source={require('../assets/girl.png')}
           style={styles.image}
           resizeMode="cover" // Adjust the resizeMode as needed
         />
         <Image
-          source={require('./assets/girl.png')}
+          source={require('../assets/girl.png')}
           style={styles.image}
           resizeMode="cover" // Adjust the resizeMode as needed
         />
         <Image
-          source={require('./assets/girl.png')}
+          source={require('../assets/girl.png')}
           style={styles.image}
           resizeMode="cover" // Adjust the resizeMode as needed
         />
       </ScrollView>
-      <NavigationContainer>
-      {/* Tab Navigator */}
-      <Tab.Navigator
      
-      >
-        <Tab.Screen
-          name="Home"
-          component={HomeScreen}
-          options={{
-            tabBarIcon: ({ color }) => (
-              <Image
-                source={require('./assets/aa.png')}
-                style={[styles.icon, { tintColor: color }]}
-              />
-            ),
-          }}
-        />
-        <Tab.Screen
-          name="Profile"
-          component={ProfileScreen}
-          options={{
-            tabBarIcon: ({ color }) => (
-              <Image
-                source={require('./assets/aa.png')}
-                style={[styles.icon, { tintColor: color }]}
-              />
-            ),
-          }}
-        />
-      </Tab.Navigator>
-      </NavigationContainer>
     </View>
   );
 };
@@ -101,4 +69,4 @@ const styles = StyleSheet.create({
   
 });
 
-export default Address;
+export default MainPage;
