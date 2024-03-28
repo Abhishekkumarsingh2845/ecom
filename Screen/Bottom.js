@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Address from '../Screen/Address';
-import Login from '../Screen/Login';
+
 import Profile from '../Screen/Profile';
 import Fav  from '../Screen/Favourite';
 import  MyBagScreen from '../Screen/MyBagScreen';
