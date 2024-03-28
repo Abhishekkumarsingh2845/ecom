@@ -5,7 +5,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 const { width } = Dimensions.get('window');
 const photoWidth = (width - 40) / 2; // Assuming 10 units of margin on each side
 
-const PhotoGrid = () => {
+const Fav = () => {
   const [ratings, setRatings] = useState([0, 0, 0, 0, 0]); // Initial rating state for each photo
 
   const handleStarPress = (index) => {
@@ -20,7 +20,7 @@ const PhotoGrid = () => {
         <View style={styles.row}>
           {[...Array(2)].map((_, rowIndex) => (
             <View key={rowIndex} style={styles.item}>
-              <Image source={require('./assets/photo.png')} style={styles.photo} />
+              <Image source={require('../assets/photo.png')} style={styles.photo} />
               <View style={styles.starContainer}>
                 {[...Array(5)].map((_, starIndex) => (
                   <TouchableOpacity
@@ -47,7 +47,7 @@ const PhotoGrid = () => {
         <View style={styles.row}>
           {[...Array(2)].map((_, rowIndex) => (
             <View key={rowIndex} style={styles.item}>
-              <Image source={require('./assets/girl.png')} style={styles.photo} />
+          
               <View style={styles.starContainer}>
                 {[...Array(5)].map((_, starIndex) => (
                   <TouchableOpacity
@@ -74,7 +74,7 @@ const PhotoGrid = () => {
         <View style={styles.row}>
           {[...Array(2)].map((_, rowIndex) => (
             <View key={rowIndex} style={styles.item}>
-              <Image source={require('./assets/ag.png')} style={styles.photo} />
+             
               <View style={styles.starContainer}>
                 {[...Array(5)].map((_, starIndex) => (
                   <TouchableOpacity
@@ -155,4 +155,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default PhotoGrid;
+export default Fav;

@@ -9,7 +9,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
-const MyBagScreen = () => {
+const MyBagScreen = ({navigation}) => {
   const [counter, setCounter] = useState(0);
 
   const incrementCounter = () => {
@@ -27,14 +27,14 @@ const MyBagScreen = () => {
       <Text style={styles.title}>MY BAG</Text>
       <View style={styles.c3}>
         <Image
-          source={require('./assets/girl.png')}
+          source={require('../assets/girl.png')}
           style={styles.image}
           resizeMode="cover"
         />
         <View style={styles.textContainer}>
           <View style={styles.first}>
             <Text style={styles.text}>Pullover</Text>
-            <Image source={require('./assets/icon.jpg')} style={styles.icon} />
+            <Image source={require('../assets/icon.jpg')} style={styles.icon} />
           </View>
           <View style={styles.two}>
             <Text style={styles.txt}>Color:Black</Text>
@@ -51,14 +51,14 @@ const MyBagScreen = () => {
    
       <View style={styles.c3}>
         <Image
-          source={require('./assets/bags.png')}
+          source={require('../assets/bags.png')}
           style={styles.image}
           resizeMode="cover"
         />
         <View style={styles.textContainer}>
           <View style={styles.first}>
             <Text style={styles.text}>Pullover</Text>
-            <Image source={require('./assets/icon.jpg')} style={styles.icon} />
+            <Image source={require('../assets/icon.jpg')} style={styles.icon} />
           </View>
           <View style={styles.two}>
             <Text style={styles.txt}>Color:Black</Text>
@@ -75,14 +75,14 @@ const MyBagScreen = () => {
     
       <View style={styles.c3}>
         <Image
-          source={require('./assets/bb.png')}
+          source={require('../assets/bb.png')}
           style={styles.image}
           resizeMode="cover"
         />
         <View style={styles.textContainer}>
           <View style={styles.first}>
             <Text style={styles.text}>Pullover</Text>
-            <Image source={require('./assets/icon.jpg')} style={styles.icon} />
+            <Image source={require('../assets/icon.jpg')} style={styles.icon} />
           </View>
           <View style={styles.two}>
             <Text style={styles.txt}>Color:Black</Text>

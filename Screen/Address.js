@@ -11,7 +11,7 @@ import {
   Dimensions,Button // Import Dimensions for screen size detection
 } from 'react-native';
 
-const Address = ({ navigation }) => {
+const Address = ({navigation}) => {
   const [toggleCheckBox, setToggleCheckBox] = useState(false);
 
   return (
@@ -19,7 +19,7 @@ const Address = ({ navigation }) => {
       <View style={styles.addressContainer}>
         <Text style={styles.name}>Harsh</Text>
         <TouchableOpacity>
-          <Text style={styles.edit} >Edit</Text>
+          <Text style={styles.edit}  >Edit</Text>
         </TouchableOpacity>
         <Text style={styles.address}>D-107{'\n'}Vasundhara, Ghaziabad, U.P</Text>
         <View style={styles.checkBoxContainer}>
@@ -31,6 +31,9 @@ const Address = ({ navigation }) => {
           />
           <Text style={styles.useAddressText}>Use This Address</Text>
           <Button title='LOGIN' onPress={() => navigation.navigate('Profile')} color="red" />
+          <Button title='Catalog' onPress={() => navigation.navigate('Catalog')} color="red" />
+          <Button title='Bag' onPress={() => navigation.navigate('MyBagScreen')} color="red" />
+          <Button title='Bag' onPress={() => navigation.navigate('MainPage')} color="red" />
         </View>
       </View>
     </ScrollView>

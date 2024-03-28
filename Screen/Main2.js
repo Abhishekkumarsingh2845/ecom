@@ -8,7 +8,7 @@ import {
   Dimensions,
 } from 'react-native';
 
-const Address = ({ navigation }) => {
+const main = ({ navigation }) => {
   return (
     <View style={styles.addressContainer}>
       <Image
@@ -99,4 +99,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Address;
+export default main;
